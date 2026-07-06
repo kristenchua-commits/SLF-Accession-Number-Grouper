@@ -3,9 +3,14 @@ library(dplyr)
 library(stringr)
 
 # Read the CSV
+
+#If it is the full list uncomment "SLFS 2025-2026 UCOP Stats (FY 2025-26 accessions).xlsx - SLFS - All Items Added.csv"
+#If it is the partial list beginning with A's only, uncomment "Barcode beginning with 'A0' Only_ SLFS 2025-2026 UCOP Stats (FY 2025-26) accessions list.csv"
+
 df <- read_csv(
   "SLFS 2025-2026 UCOP Stats (FY 2025-26 accessions).xlsx - SLFS - All Items Added.csv",
-  show_col_types = FALSE
+  #"Barcode beginning with 'A0' Only_ SLFS 2025-2026 UCOP Stats (FY 2025-26) accessions list.csv",
+    show_col_types = FALSE
 )
 
 # Create new columns
@@ -37,5 +42,8 @@ prefix <- df %>%
 # View the results
 View(prefix)
 
-# Save the updated file
-write_csv(prefix, "barcode_prefixes&postfix.csv")
+# Save the updated file. 
+#If it is the full list uncomment and save as "barcode_prefixes&postfix_all_items.csv"
+#If it is the partial list beginning with A's only, uncomment and write "barcode_prefixes&postfix_beginning_with_A_only.csv")
+write_csv(prefix, "barcode_prefixes&postfix_all_items.csv")
+#write_csv(prefix, "barcode_prefixes&postfix_beginning_with_A_only.csv")
