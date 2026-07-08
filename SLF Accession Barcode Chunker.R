@@ -4,7 +4,7 @@ library(stringr)
 library(writexl)
 
 # Read the file with prefixes
-df <- read_csv("barcode_prefixes&postfix.csv", show_col_types = FALSE)
+df <- read_csv("barcode_prefixes&postfix_all_items.csv", show_col_types = FALSE)
 
 # Make sure the needed columns exist
 df <- df %>%

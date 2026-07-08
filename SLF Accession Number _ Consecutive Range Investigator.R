@@ -2,9 +2,10 @@ library(readr)
 library(dplyr)
 library(stringr)
 
-# Read the file
+# Read the file, pick which file to read
 df <- read_csv(
   "SLFS 2025-2026 UCOP Stats (FY 2025-26 accessions).xlsx - SLFS - All Items Added.csv",
+  #"Barcode beginning with 'A0' Only_ SLFS 2025-2026 UCOP Stats (FY 2025-26) accessions list.csv",
   show_col_types = FALSE
 )
 
@@ -52,4 +53,5 @@ result <- df %>%
 View(result)
 
 # Save output
-write_csv(result, "barcode_ranges_output.csv")
+write_csv(result, "all_barcode_ranges_output.csv")
+#write_csv(result, "startingwithA_barcode_ranges_output.csv")
